@@ -9,6 +9,10 @@ Edit your username and password of dockerhub in pullToDockerHub.sh
 Run pullToDockerHub.sh  
   
 # In K8s Deploy  
+To Download necessary image(kube-system) for k8s, you can run pullImage.sh  
+Note: If you use container, replace docker pull and docker tag with corresponding command, like ctr i pull, ctr i tag  
+This command can let you download images in China Mainland  
+
 Before running:
 Edit echobackDeployment.yaml to set your image and container port(Your Http server listening port)  
 Edit ingress.yaml to set your http root path in field "paths.path". / mains root is /  
