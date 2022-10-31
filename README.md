@@ -26,4 +26,4 @@ Use kubectl get node to see status, After all slave nodes joining
 Run bash afterAddSlaveNode.sh  
 Then use curl "192.168.244.130:30080/<Your Path>?<Your Args>" to test.  
 
-![Uploading 未命名文件_1667205268898_0.png…]()  
+![Uploading 未命名文件_1667205268898_0.png…]() 
