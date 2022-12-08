@@ -10,7 +10,7 @@ Run pullToDockerHub.sh
   
 # In K8s Deploy  
 To Download necessary image(kube-system) for k8s, you can run pullImage.sh  
-Note: If you use container, replace docker pull and docker tag with corresponding command, like ctr i pull, ctr i tag  
+Note: If you use containerd, replace docker pull and docker tag with corresponding command, like ctr i pull, ctr i tag  
 This command can let you download images in China Mainland  
 
 Before running:
@@ -24,6 +24,6 @@ Run kubectl apply -f calico.yaml in master node
 Use kubeadm join to join slave node, run this in slave node  
 Use kubectl get node to see status, After all slave nodes joining  
 Run bash afterAddSlaveNode.sh  
-Then use curl "192.168.244.130:30080/<Your Path>?<Your Args>" to test.  
+Then use curl "192.168.244.130:30080/\<Your Path\>?\<Your Args\>" to test.  
 ![未命名文件_1667205268898_0](https://user-images.githubusercontent.com/47754424/198976839-7344830d-6f28-4457-857a-e9712bbcccd5.png)
 
