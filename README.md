@@ -3,9 +3,10 @@ A usable K8S Deployment With containerd
   
 # In container making  
 Edit buildContainer.sh set your buildctl's location. If you use buildkit.  
+Edit buildContainer.sh to set your container's name and other metainfo.  
 Put Dockerfile in the same path with buildContainer.sh  
 Run bash buildContainer.sh  
-Edit your username and password of dockerhub in pullToDockerHub.sh  
+Edit your username, password and any other personal info of dockerhub in pullToDockerHub.sh  
 Run pullToDockerHub.sh  
   
 # In K8s Deploy  
