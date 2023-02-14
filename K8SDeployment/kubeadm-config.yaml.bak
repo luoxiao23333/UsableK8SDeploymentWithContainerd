@@ -9,16 +9,16 @@ bootstrapTokens:
   - authentication
 kind: InitConfiguration
 localAPIEndpoint:
-  advertiseAddress: 191.168.0.101
+  advertiseAddress: 10.96.0.1
   bindPort: 6443
 nodeRegistration:
   criSocket: unix:///var/run/containerd/containerd.sock
   imagePullPolicy: IfNotPresent
-  name: k8s-controller
   taints: null
+  name: k8s-controller
 ---
 apiServer:
-  timeoutForControlPlane: 1m20s
+  timeoutForControlPlane: 4m0s
 apiVersion: kubeadm.k8s.io/v1beta3
 certificatesDir: /etc/kubernetes/pki
 clusterName: kubernetes
@@ -27,7 +27,7 @@ dns: {}
 etcd:
   local:
     dataDir: /var/lib/etcd
-imageRepository: registry.aliyuncs.com/google_containers
+imageRepository: registry.cn-hangzhou.aliyuncs.com/google_containers
 kind: ClusterConfiguration
 kubernetesVersion: 1.26.1
 networking:
@@ -35,6 +35,6 @@ networking:
   serviceSubnet: 10.96.0.0/12
 scheduler: {}
 ---
-kind: KubeletConfiguration
 apiVersion: kubelet.config.k8s.io/v1beta1
-cgroupDriver: cgroupfs
+kind: KubeletConfiguration
+cgroupDriver: systemd
