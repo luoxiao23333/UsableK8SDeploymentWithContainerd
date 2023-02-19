@@ -9,7 +9,7 @@ bootstrapTokens:
   - authentication
 kind: InitConfiguration
 localAPIEndpoint:
-  advertiseAddress: 192.168.1.101
+  advertiseAddress: 192.168.0.101
   bindPort: 6443
 nodeRegistration:
   criSocket: unix:///run/containerd/containerd.sock
@@ -27,18 +27,10 @@ dns: {}
 etcd:
   local:
     dataDir: /var/lib/etcd
-imageRepository: registry.aliyuncs.com/google_containers
+imageRepository: registry.k8s.io
 kind: ClusterConfiguration
-kubernetesVersion: 1.26.1
+kubernetesVersion: 1.25.10
 networking:
   dnsDomain: cluster.local
   serviceSubnet: 10.96.0.0/12
 scheduler: {}
----
-apiVersion: kubelet.config.k8s.io/v1beta1
-cgroupDriver: systemd
-enableServer: true
-address: 0.0.0.0
-port: 10250
-httpCheckFrequency: 20s
-kind: KubeletConfiguration
