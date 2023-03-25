@@ -1,4 +1,5 @@
 apiVersion: apps/v1
+
 kind: Deployment
 metadata:
   name: scheduler
@@ -10,7 +11,7 @@ spec:
   revisionHistoryLimit: 10 # RS历史版本保存数量
   selector:
     matchLabels:
-      app: scheduler
+      app: my-scheduler
   strategy:
     rollingUpdate:
       maxSurge: 25%             # 滚动更新过程最大pod副本数
@@ -19,12 +20,14 @@ spec:
   template:
     metadata:
       labels:
-        app: scheduler # Pod副本的标签
+        app: my-scheduler # Pod副本的标签
     spec:
       nodeName: controller
       hostNetwork: true
       containers:
-      - name: scheduler
-        image: docker.io/luoxiao23333/scheduler:v0
-        ports:
-         - containerPort: 8081
+      - name: my-scheduler
+        image: docker.io/luoxiao23333/scheduler:v2
+        #image:  ubuntu
+        command: ["/bin/bash", "-c", "--"]
+        args: ["while true; do sleep 30; done;"]
+        imagePullPolicy: Never

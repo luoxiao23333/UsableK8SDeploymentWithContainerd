@@ -6,7 +6,7 @@ metadata:
   annotations:       # 记录回滚参数
     kubernetes.io/change-cause: "web.v1-nginx-1.19"   #记录到revision中的内容，记录版本号
 spec:
-  replicas: 2 # Pod副本预期数量
+  replicas: 1 # Pod副本预期数量
   revisionHistoryLimit: 10 # RS历史版本保存数量
   selector:
     matchLabels:
@@ -25,5 +25,6 @@ spec:
       containers:
       - name: web
         image: docker.io/luoxiao23333/echoback:v0
+        #image: ubuntu:latest
         ports:
          - containerPort: 8080
