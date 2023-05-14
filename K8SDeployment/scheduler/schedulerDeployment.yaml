@@ -27,6 +27,9 @@ spec:
       containers:
       - name: my-scheduler
         image: docker.io/luoxiao23333/scheduler:v2
+        env:
+        - name: Debug
+          value: "False"
         #image:  ubuntu
         #command: ["/bin/bash", "-c", "--"]
         #args: ["while true; do sleep 30; done;"]
