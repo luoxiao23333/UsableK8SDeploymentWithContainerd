@@ -26,7 +26,7 @@ spec:
       hostNetwork: true
       containers:
       - name: my-scheduler
-        image: docker.io/luoxiao23333/scheduler:v2
+        image: docker.io/luoxiao23333/scheduler:v3
         env:
         - name: Debug
           value: "False"
